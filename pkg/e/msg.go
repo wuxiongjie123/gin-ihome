@@ -1,6 +1,5 @@
 package e
 
-
 var recodeText = map[int]string{
 	RECODE_OK:         "成功",
 	RECODE_DBERR:      "数据库查询错误",
@@ -19,7 +18,7 @@ var recodeText = map[int]string{
 	RECODE_IOERR:      "文件读写错误",
 	RECODE_SERVERERR:  "内部错误",
 	RECODE_UNKNOWERR:  "未知错误",
-	RECODE_MOBILEERR: "手机号已经存在",
+	RECODE_MOBILEERR:  "手机号已经存在",
 }
 
 func GetMsg(code int) string {

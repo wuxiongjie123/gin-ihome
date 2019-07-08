@@ -41,12 +41,12 @@ func Register(c *gin.Context) {
 	// 查询用户是否存在
 	var acc *models.Account
 	acc, err = models.SelectAccount(req.Mobile)
-	if err!=nil{
+	if err != nil {
 		SendResp(c, e.RECODE_DBERR, nil)
 		return
 	}
 	if acc.Mobile != "" && acc.Mobile == req.Mobile {
-		SendResp(c,e.RECODE_MOBILEERR,nil)
+		SendResp(c, e.RECODE_MOBILEERR, nil)
 		return
 	}
 
@@ -110,5 +110,5 @@ func Login(c *gin.Context) {
 		return
 	}
 
-	SendResp(c, e.RECODE_OK, nil)
+	SendResp(c, e.RECODE_OK, req.Mobile)
 }
